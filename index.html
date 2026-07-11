@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Plumbing, Waterproofing & Tile Services</title>
+    <meta name="description" content="premium plumbing, waterproofing, tile installation & grouting services. Free quotes, licensed professionals, emergency support. Call now!" />
+    <link rel="canonical" href="https://proplumb.com/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Best Plumbing, Waterproofing & Tile Services" />
+    <meta property="og:description" content="Premium plumbing, waterproofing, tile installation & grouting services. Free quotes, licensed professionals." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://proplumb.com/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=630&fit=crop&auto=format" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Best Plumbing, Waterproofing & Tile Services" />
+    <meta name="twitter:description" content="Premium plumbing, waterproofing, tile installation & grouting services." />
+
+    <!-- ═══ SHOELACE LOADER (moved to bottom) ═══ -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js">
+</script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ─── Base ─── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* ─── Loading Screen ─── */
+        #loading-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-ring {
+            width: 64px;
+            height: 64px;
+            border: 6px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ─── Hero Background ─── */
+        #hero {
+            background: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            position: relative;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.78);
+            z-index: 1;
+        }
+        #hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ─── Glassmorphism ─── */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* ─── Shadows ─── */
+        .shadow-soft {
+            box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.02);
+        }
+        .shadow-card {
+            box-shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.06), 0 2px 8px -2px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .shadow-card:hover {
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+        }
+
+        /* ─── Animations ─── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── Sticky Nav ─── */
+        #navbar {
+            transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+            padding: 16px 0;
+        }
+        #navbar.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            padding: 10px 0;
+        }
+        #navbar.scrolled .nav-link {
+            color: #1e293b;
+        }
+        #navbar.scrolled .nav-link:hover {
+            color: #2563eb;
+        }
+        #navbar.scrolled .logo-text {
+            color: #0f172a;
+        }
+        #navbar.scrolled .logo-text span {
+            color: #2563eb;
+        }
+        #navbar.scrolled #menu-toggle {
+            color: #1e293b;
+            background: rgba(15, 23, 42, 0.06);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+        }
+        #navbar.scrolled #menu-toggle:hover {
+            background: rgba(15, 23, 42, 0.12);
+        }
+        #navbar:not(.scrolled) #menu-toggle {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        #navbar:not(.scrolled) #menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ─── Service Card ─── */
+        .service-card {
+            border-radius: 20px;
+            background: #ffffff;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+            cursor: default;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 24px 60px -16px rgba(0, 0, 0, 0.12);
+        }
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: #2563eb;
+            font-size: 28px;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        /* ─── Semantic Testimonial Slider ─── */
+        .testimonial-slider-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            gap: 24px;
+        }
+        .testimonial-slide {
+            min-width: calc(33.333% - 16px);
+            flex: 0 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px 24px;
+            box-shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-slide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.10);
+        }
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: #1e40af;
+            flex-shrink: 0;
+        }
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .slider-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid #e2e8f0;
+            background: #fff;
+            color: #1e293b;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-btn:hover {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+        }
+        .slider-dots {
+            display: flex;
+            gap: 10px;
+        }
+        .slider-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .slider-dots span.active {
+            background: #2563eb;
+            transform: scale(1.15);
+        }
+        @media (max-width: 1024px) {
+            .testimonial-slide {
+                min-width: calc(50% - 12px);
+            }
+        }
+        @media (max-width: 640px) {
+            .testimonial-slide {
+                min-width: 100%;
+            }
+            .slider-controls {
+                gap: 16px;
+            }
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+
+        /* ─── Native FAQ (details/summary) ─── */
+        .faq-item {
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.08);
+            border-color: #e2e8f0;
+        }
+        .faq-item summary {
+            padding: 20px 24px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #0f172a;
+            background: #ffffff;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            user-select: none;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1rem;
+            color: #2563eb;
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+        .faq-item summary:hover {
+            background: #f8fafc;
+        }
+        .faq-item[open] {
+            border-color: #2563eb;
+            box-shadow: 0 8px 30px -8px rgba(37, 99, 235, 0.10);
+        }
+        .faq-item[open] summary {
+            color: #1e40af;
+        }
+        .faq-item .faq-content {
+            padding: 0 24px 24px 24px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        /* ─── Floating Buttons ─── */
+        .float-btn {
+            position: fixed;
+            z-index: 900;
+            border: none;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+        }
+        .float-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
+        .float-btn-whatsapp {
+            bottom: 130px;
+            right: 24px;
+            background: #25d366;
+        }
+        .float-btn-call {
+            bottom: 72px;
+            right: 24px;
+            background: #2563eb;
+        }
+        .float-btn-quote {
+            bottom: 188px;
+            right: 24px;
+            background: #0f172a;
+        }
+
+        /* ─── Back to Top ─── */
+        #back-top {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 900;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #0f172a;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #back-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #back-top:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        /* ─── Sticky Quote CTA ─── */
+        #sticky-quote {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 800;
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 10px 0;
+            transform: translateY(-120%);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        #sticky-quote.show {
+            transform: translateY(0);
+        }
+
+        /* ─── Discount Banner ─── */
+        #discount-banner {
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            color: #fff;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        #discount-banner a {
+            color: #fcd34d;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* ─── Emergency Banner ─── */
+        #emergency-banner {
+            background: #dc2626;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            animation: pulse-bg 2s infinite;
+        }
+        @keyframes pulse-bg {
+            0%,
+            100% {
+                background: #dc2626;
+            }
+            50% {
+                background: #b91c1c;
+            }
+        }
+
+        /* ─── Lightbox ─── */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            padding: 40px;
+        }
+        #lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 20px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+            transform: scale(0.92);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            object-fit: contain;
+        }
+        #lightbox.open img {
+            transform: scale(1);
+        }
+        #lightbox .close {
+            position: absolute;
+            top: 28px;
+            right: 36px;
+            color: #fff;
+            font-size: 36px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            background: none;
+            border: none;
+        }
+        #lightbox .close:hover {
+            opacity: 1;
+        }
+
+        /* ─── Mobile Menu ─── */
+        #mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 950;
+            background: rgba(15, 23, 42, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        #mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        #mobile-menu a {
+            color: #f1f5f9;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            padding: 6px 0;
+        }
+        #mobile-menu a:hover {
+            color: #60a5fa;
+        }
+        #mobile-menu .close-btn {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        #mobile-menu .close-btn:hover {
+            opacity: 1;
+        }
+
+        /* ─── Utilities ─── */
+        .text-balance {
+            text-wrap: balance;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ─── Shoelace Overrides (for rating and form) ─── */
+        sl-button::part(base) {
+            border-radius: 60px;
+            font-weight: 600;
+        }
+        sl-card::part(base) {
+            border-radius: 20px;
+            box-shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* Toast */
+        .toast-container {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 380px;
+            width: 100%;
+        }
+        .toast {
+            padding: 16px 20px;
+            border-radius: 16px;
+            background: #0f172a;
+            color: #f1f5f9;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.4s ease;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .toast.success {
+            border-left: 4px solid #22c55e;
+        }
+        .toast.error {
+            border-left: 4px solid #ef4444;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Gallery overlay */
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .filter-btn.active {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+        }
+    </style>
+
+    <!-- JSON-LD Schemas -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ProPlumb",
+            "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=400&fit=crop&auto=format",
+            "telephone": "+1-800-555-0199",
+            "email": "info@proplumb.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 Main Street",
+                "addressLocality": "Austin",
+                "addressRegion": "TX",
+                "postalCode": "78701",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 07:00-22:00",
+            "priceRange": "$$",
+            "description": "Premium plumbing, waterproofing, tile installation & grouting services.",
+            "url": "https://proplumb.com/",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "520"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": "What plumbing services do you offer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer full plumbing services including repairs, installations, leak detection, pipe replacement, water heater services, and emergency plumbing."
+                }
+            }, {
+                "@type": "Question",
+                "name": "How much does tile installation cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tile installation costs vary based on tile type, area size, and complexity. We provide free, no-obligation estimates after an on-site inspection."
+                }
+            }, {
+                "@type": "Question",
+                "name": "Do you offer emergency plumbing services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide 24/7 emergency plumbing services. Call our emergency number for immediate assistance."
+                }
+            }, {
+                "@type": "Question",
+                "name": "Is your waterproofing service guaranteed?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all our waterproofing services come with a 5-year warranty on workmanship and materials."
+                }
+            }]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://proplumb.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://proplumb.com/#services" },
+                { "@type": "ListItem", "position": 3, "name": "Contact", "item": "https://proplumb.com/#contact" }
+            ]
+        }
+    </script>
+</head>
+<body>
+
+    <!-- ═══ LOADING SCREEN ═══ -->
+    <div id="loading-screen" role="status" aria-label="Loading">
+        <div class="loader-ring"></div>
+    </div>
+
+    <!-- ═══ DISCOUNT BANNER ═══ -->
+    <!-- <div id="discount-banner" role="banner">
+        🎉 <strong>10% OFF</strong> on all services this month!
+        <a href="#contact">Claim Your Discount →</a>
+    </div> -->
+
+    <!-- ═══ EMERGENCY BANNER ═══ -->
+    <!-- <div id="emergency-banner" role="banner">
+        ⚡ <strong>24/7 Emergency Service</strong> — Call us anytime:
+        <a href="tel:+18005550199" style="color:#fcd34d;font-weight:700;text-decoration:none;">+1-800-555-0199</a>
+    </div> -->
+
+    <!-- ═══ STICKY QUOTE CTA ═══ -->
+    <div id="sticky-quote">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-white font-medium text-sm sm:text-base">🏆 Free Quote — No Obligation</span>
+            <div class="flex gap-3 flex-wrap justify-center">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition">Get Free Quote</a>
+                <a href="tel:+18005550199" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition">📞 Call Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300" role="banner">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 text-2xl font-extrabold no-underline logo-text text-white">
+                <span class="text-blue-400">◆</span>
+                <span>Pro<span class="text-blue-400">Plumb</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-white/80" aria-label="Main navigation">
+                <a href="#services" class="nav-link hover:text-white transition">Services</a>
+                <a href="#about" class="nav-link hover:text-white transition">About</a>
+                <a href="#gallery" class="nav-link hover:text-white transition">Gallery</a>
+                <a href="#testimonials" class="nav-link hover:text-white transition">Testimonials</a>
+                <a href="#faq" class="nav-link hover:text-white transition">FAQ</a>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition text-sm font-semibold">Get a Quote</a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button id="menu-toggle" class="lg:hidden text-2xl p-2 rounded-xl backdrop-blur-sm transition" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══ MOBILE MENU ═══ -->
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <button class="close-btn" id="mobile-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#gallery" class="mobile-link">Gallery</a>
+        <a href="#testimonials" class="mobile-link">Testimonials</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+        <a href="#contact" class="mobile-link bg-blue-600 px-8 py-3 rounded-full text-white font-semibold">Get a Quote</a>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero" class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden" aria-label="Hero section">
+        <div class="max-w-7xl mx-auto px-4 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left -->
+                <div class="text-white space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-blue-600/20 border border-blue-400/30 backdrop-blur-sm">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        ★ 4.9/5 — 500+ Happy Customers
+                    </div>
+                    <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-balance">
+                        Premium <span class="gradient-text">Plumbing,</span><br />
+                        Waterproofing &amp; Tile Experts
+                    </h1>
+                    <p class="text-lg text-white/80 max-w-lg leading-relaxed">
+                        Licensed, insured professionals delivering fast, reliable, and affordable
+                        solutions for your home or business. Free estimates, 5-year warranty.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                            <i class="fas fa-file-signature"></i> Get Free Quote
+                        </a>
+                        <a href="tel:+18005550199" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-lg font-semibold transition backdrop-blur-sm border border-white/20 flex items-center gap-2">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-6 pt-4 text-white/70 text-sm">
+                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Licensed</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Insured</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> 5-Yr Warranty</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> 24/7 Support</span>
+                    </div>
+                </div>
+                <!-- Right: Trust/Stats -->
+                <div class="grid grid-cols-2 gap-4 lg:gap-6">
+                    <div class="glass p-6 rounded-2xl text-white text-center backdrop-blur-sm border border-white/10">
+                        <div class="text-4xl font-extrabold text-blue-400"><span class="counter" data-target="15">0</span>+</div>
+                        <div class="text-white/70 text-sm">Years Experience</div>
+                    </div>
+                    <div class="glass p-6 rounded-2xl text-white text-center backdrop-blur-sm border border-white/10">
+                        <div class="text-4xl font-extrabold text-blue-400"><span class="counter" data-target="4.9">0</span>★</div>
+                        <div class="text-white/70 text-sm">Google Rating</div>
+                    </div>
+                    <div class="glass p-6 rounded-2xl text-white text-center backdrop-blur-sm border border-white/10">
+                        <div class="text-4xl font-extrabold text-blue-400"><span class="counter" data-target="500">0</span>+</div>
+                        <div class="text-white/70 text-sm">Projects Done</div>
+                    </div>
+                    <div class="glass p-6 rounded-2xl text-white text-center backdrop-blur-sm border border-white/10">
+                        <div class="text-4xl font-extrabold text-blue-400"><span class="counter" data-target="98">0</span>%</div>
+                        <div class="text-white/70 text-sm">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="py-20 bg-white" aria-label="About us">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">About Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                        Trusted <span class="gradient-text">Plumbing &amp; Waterproofing</span> Specialists
+                    </h2>
+                    <p class="text-slate-600 mt-4 leading-relaxed">
+                        ProPlumb has been serving homeowners and businesses for over 15 years with
+                        premium plumbing, waterproofing, tile installation, and grouting services.
+                        Our team of licensed professionals uses only the highest quality materials
+                        and the latest techniques to ensure lasting results.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                            <div><span class="font-semibold">Licensed</span><br /><span class="text-sm text-slate-500">Fully certified professionals</span></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                            <div><span class="font-semibold">Insured</span><br /><span class="text-sm text-slate-500">Full liability coverage</span></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                            <div><span class="font-semibold">5-Yr Warranty</span><br /><span class="text-sm text-slate-500">Workmanship guaranteed</span></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                            <div><span class="font-semibold">24/7 Support</span><br /><span class="text-sm text-slate-500">Emergency services available</span></div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition mt-6">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="fade-up relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop&crop=center&auto=format" alt="Plumbing work" class="rounded-2xl shadow-soft w-full h-56 object-cover" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=300&fit=crop&crop=center&auto=format" alt="Tile installation" class="rounded-2xl shadow-soft w-full h-56 object-cover mt-8" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1585704032916-c340fcaeeaf4?w=400&h=300&fit=crop&crop=center&auto=format" alt="Waterproofing" class="rounded-2xl shadow-soft w-full h-56 object-cover -mt-4" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1585704032916-c340fcaeeaf4?w=400&h=300&fit=crop&crop=center&auto=format" alt="Grouting" class="rounded-2xl shadow-soft w-full h-56 object-cover mt-4" loading="lazy" />
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white px-6 py-4 rounded-2xl shadow-lg shadow-blue-600/30">
+                        <div class="text-3xl font-extrabold">15+</div>
+                        <div class="text-sm opacity-90">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section id="services" class="py-20 bg-slate-50" aria-label="Our services">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
+                <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">What We Do</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                    Comprehensive <span class="gradient-text">Home Services</span>
+                </h2>
+                <p class="text-slate-600 mt-4">From emergency plumbing to full bathroom renovations — we do it all with precision and care.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Plumbing</h3>
+                    <p class="text-slate-500 text-sm mt-1">Repairs, installations, leak detection &amp; more.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-th-large"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Tile Installation</h3>
+                    <p class="text-slate-500 text-sm mt-1">Floor, wall &amp; custom tile installation.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Tile Repair</h3>
+                    <p class="text-slate-500 text-sm mt-1">Cracked, broken, or loose tiles fixed fast.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-bath"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Bathroom Renovation</h3>
+                    <p class="text-slate-500 text-sm mt-1">Full remodels with premium finishes.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Waterproofing</h3>
+                    <p class="text-slate-500 text-sm mt-1">Basement, foundation &amp; exterior waterproofing.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Roof Waterproofing</h3>
+                    <p class="text-slate-500 text-sm mt-1">Protect your roof from leaks &amp; damage.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-umbrella"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Terrace Waterproofing</h3>
+                    <p class="text-slate-500 text-sm mt-1">Durable terrace waterproofing solutions.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-water"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Bathroom Waterproofing</h3>
+                    <p class="text-slate-500 text-sm mt-1">Prevent leaks and water damage.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-fill-drip"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Tile Grouting</h3>
+                    <p class="text-slate-500 text-sm mt-1">Professional grouting for a flawless finish.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Epoxy Grouting</h3>
+                    <p class="text-slate-500 text-sm mt-1">Durable, stain-resistant epoxy grout.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Regrouting</h3>
+                    <p class="text-slate-500 text-sm mt-1">Restore your tiles with fresh regrouting.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+                <div class="service-card p-6 shadow-card fade-up">
+                    <div class="service-icon"><i class="fas fa-bug"></i></div>
+                    <h3 class="text-xl font-bold mt-4">Leakage Repair</h3>
+                    <p class="text-slate-500 text-sm mt-1">Fast, effective leak detection and repair.</p>
+                    <a href="#contact" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ WHY CHOOSE US ═══ -->
+    <section class="py-20 bg-white" aria-label="Why choose us">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
+                <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">Why ProPlumb</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                    Built on <span class="gradient-text">Trust &amp; Excellence</span>
+                </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">👨‍🔧</div>
+                    <h3 class="font-bold mt-4">Experienced Technicians</h3>
+                    <p class="text-sm text-slate-500 mt-1">15+ years of hands-on expertise.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">💰</div>
+                    <h3 class="font-bold mt-4">Affordable Pricing</h3>
+                    <p class="text-sm text-slate-500 mt-1">Quality service at fair, transparent rates.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">🧱</div>
+                    <h3 class="font-bold mt-4">Quality Materials</h3>
+                    <p class="text-sm text-slate-500 mt-1">Only premium, durable materials used.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">⚡</div>
+                    <h3 class="font-bold mt-4">Fast Service</h3>
+                    <p class="text-sm text-slate-500 mt-1">Arrive on time, finish on schedule.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">🛡️</div>
+                    <h3 class="font-bold mt-4">Warranty</h3>
+                    <p class="text-sm text-slate-500 mt-1">5-year workmanship warranty.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">📜</div>
+                    <h3 class="font-bold mt-4">Licensed Professionals</h3>
+                    <p class="text-sm text-slate-500 mt-1">Fully licensed &amp; insured.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">🚨</div>
+                    <h3 class="font-bold mt-4">Emergency Support</h3>
+                    <p class="text-sm text-slate-500 mt-1">24/7 emergency services available.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 shadow-card fade-up">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">😊</div>
+                    <h3 class="font-bold mt-4">Customer Satisfaction</h3>
+                    <p class="text-sm text-slate-500 mt-1">4.9★ rating from 500+ clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PROCESS ═══ -->
+    <section class="py-20 bg-slate-50" aria-label="Our process">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
+                <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">How We Work</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                    Simple <span class="gradient-text">6-Step Process</span>
+                </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="text-center p-4 fade-up">
+                    <div class="w-14 h-14 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-600/30">1</div>
+                    <h4 class="font-bold mt-3">Contact</h4>
+                    <p class="text-sm text-slate-500">Call or fill out our form.</p>
+                </div>
+                <div class="text-center p-4 fade-up">
+                    <div class="w-14 h-14 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-600/30">2</div>
+                    <h4 class="font-bold mt-3">Inspection</h4>
+                    <p class="text-sm text-slate-500">On-site assessment.</p>
+                </div>
+                <div class="text-center p-4 fade-up">
+                    <div class="w-14 h-14 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-600/30">3</div>
+                    <h4 class="font-bold mt-3">Free Estimate</h4>
+                    <p class="text-sm text-slate-500">No-obligation quote.</p>
+                </div>
+                <div class="text-center p-4 fade-up">
+                    <div class="w-14 h-14 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-600/30">4</div>
+                    <h4 class="font-bold mt-3">Work Starts</h4>
+                    <p class="text-sm text-slate-500">Professional execution.</p>
+                </div>
+                <div class="text-center p-4 fade-up">
+                    <div class="w-14 h-14 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-600/30">5</div>
+                    <h4 class="font-bold mt-3">Quality Check</h4>
+                    <p class="text-sm text-slate-500">Thorough inspection.</p>
+                </div>
+                <div class="text-center p-4 fade-up">
+                    <div class="w-14 h-14 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-600/30">6</div>
+                    <h4 class="font-bold mt-3">Satisfaction</h4>
+                    <p class="text-sm text-slate-500">We deliver smiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ GALLERY ═══ -->
+    <section id="gallery" class="py-20 bg-white" aria-label="Project gallery">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10 fade-up">
+                <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">Our Work</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                    Before &amp; After <span class="gradient-text">Projects</span>
+                </h2>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-8 fade-up">
+                <button class="filter-btn active px-5 py-2 rounded-full border border-slate-200 text-sm font-medium transition hover:bg-slate-100" data-filter="all">All</button>
+                <button class="filter-btn px-5 py-2 rounded-full border border-slate-200 text-sm font-medium transition hover:bg-slate-100" data-filter="plumbing">Plumbing</button>
+                <button class="filter-btn px-5 py-2 rounded-full border border-slate-200 text-sm font-medium transition hover:bg-slate-100" data-filter="waterproofing">Waterproofing</button>
+                <button class="filter-btn px-5 py-2 rounded-full border border-slate-200 text-sm font-medium transition hover:bg-slate-100" data-filter="tiles">Tiles</button>
+                <button class="filter-btn px-5 py-2 rounded-full border border-slate-200 text-sm font-medium transition hover:bg-slate-100" data-filter="grouting">Grouting</button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SEMANTIC TESTIMONIALS (Enhanced) ═══ -->
+    <section id="testimonials" class="py-20 bg-slate-50" aria-label="Customer testimonials">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
+                <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">Testimonials</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                    What Our <span class="gradient-text">Customers Say</span>
+                </h2>
+                <p class="text-slate-600 mt-4">Real reviews from real clients who trust our work.</p>
+            </div>
+
+            <div class="testimonial-slider-wrapper fade-up">
+                <div class="testimonial-track" id="testimonialTrack" role="list">
+                    <!-- Slides rendered by JS as <figure> with <blockquote> -->
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevSlide" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots" id="sliderDots" role="tablist"></div>
+                <button class="slider-btn" id="nextSlide" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SEMANTIC FAQ (using native <details>/<summary>) ═══ -->
+    <section id="faq" class="py-20 bg-white" aria-label="Frequently asked questions">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
+                <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">FAQ</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                    Frequently Asked <span class="gradient-text">Questions</span>
+                </h2>
+                <p class="text-slate-600 mt-4">Find quick answers to the most common questions about our services.</p>
+            </div>
+            <div class="space-y-4" id="faqContainer">
+                <!-- Static fallback content – visible immediately, even if JS fails -->
+                <details class="faq-item" open>
+                    <summary>What plumbing services do you offer?</summary>
+                    <div class="faq-content">We offer full plumbing services including repairs, installations, leak detection, pipe replacement, water heater services, and emergency plumbing.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>How much does tile installation cost?</summary>
+                    <div class="faq-content">Tile installation costs vary based on tile type, area size, and complexity. We provide free, no-obligation estimates after an on-site inspection.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Do you offer emergency plumbing services?</summary>
+                    <div class="faq-content">Yes, we provide 24/7 emergency plumbing services. Call our emergency number for immediate assistance.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is your waterproofing service guaranteed?</summary>
+                    <div class="faq-content">Yes, all our waterproofing services come with a 5-year warranty on workmanship and materials.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>What areas do you serve?</summary>
+                    <div class="faq-content">We serve Austin, TX and surrounding areas including Round Rock, Cedar Park, Pflugerville, and more. Contact us to check if we cover your location.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CONTACT + MAP ═══ -->
+    <section id="contact" class="py-20 bg-slate-50" aria-label="Contact us">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
+                <span class="text-blue-600 font-semibold text-sm tracking-widest uppercase">Contact</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-balance">
+                    Get Your <span class="gradient-text">Free Quote</span> Today
+                </h2>
+                <p class="text-slate-600 mt-4">Fill out the form below and we'll get back to you within 2 hours.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft fade-up">
+                    <form id="contact-form" novalidate>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <sl-input label="Full Name" name="name" required placeholder="John Doe" size="medium"></sl-input>
+                            <sl-input label="Phone" name="phone" required placeholder="+1 800 555 0199" size="medium"></sl-input>
+                        </div>
+                        <sl-input label="Email" name="email" type="email" required placeholder="john@example.com" size="medium" class="mt-4"></sl-input>
+                        <sl-select label="Service Required" name="service" required size="medium" class="mt-4">
+                            <sl-option value="plumbing">Plumbing</sl-option>
+                            <sl-option value="tile-installation">Tile Installation</sl-option>
+                            <sl-option value="tile-repair">Tile Repair</sl-option>
+                            <sl-option value="waterproofing">Waterproofing</sl-option>
+                            <sl-option value="grouting">Tile Grouting</sl-option>
+                            <sl-option value="epoxy-grouting">Epoxy Grouting</sl-option>
+                            <sl-option value="leakage-repair">Leakage Repair</sl-option>
+                            <sl-option value="bathroom-renovation">Bathroom Renovation</sl-option>
+                        </sl-select>
+                        <sl-input label="City" name="city" placeholder="Austin, TX" size="medium" class="mt-4"></sl-input>
+                        <sl-textarea label="Message" name="message" rows="4" placeholder="Tell us about your project..." size="medium" class="mt-4"></sl-textarea>
+                        <sl-button type="submit" variant="primary" size="large" style="width:100%;margin-top:20px;border-radius:60px;font-weight:600;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </sl-button>
+                    </form>
+                    <p class="text-xs text-slate-400 mt-4 text-center">We respect your privacy. Your information is safe with us.</p>
+                </div>
+
+                <!-- Map & Info -->
+                <div class="space-y-6 fade-up">
+                    <div class="bg-white p-6 rounded-3xl shadow-soft">
+                        <h3 class="font-bold text-lg flex items-center gap-2"><i class="fas fa-map-marker-alt text-blue-600"></i> Our Location</h3>
+                        <div class="mt-4 rounded-2xl overflow-hidden h-64 bg-slate-200">
+                            <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27575.536002258757!2d-97.751462!3d30.267153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599a0f3f7b7%3A0x7f3e2b0c8b8b8b8b!2sAustin%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="ProPlumb location on Google Maps"></iframe>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-soft">
+                    <h3 class="font-bold text-lg flex items-center gap-2"><i class="fas fa-clock text-blue-600"></i> Business Hours</h3>
+                    <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                        <span>Mon – Fri</span><span>7:00 AM – 10:00 PM</span>
+                        <span>Saturday</span><span>8:00 AM – 8:00 PM</span>
+                        <span>Sunday</span><span>8:00 AM – 6:00 PM</span>
+                        <span class="text-emerald-600 font-semibold">Emergency</span><span class="text-emerald-600 font-semibold">24/7 Available</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-soft flex flex-wrap gap-4 justify-between items-center">
+                    <div>
+                        <div class="text-sm text-slate-500">Call us</div>
+                        <a href="tel:+18005550199" class="text-xl font-bold text-blue-600 hover:underline">+1-800-555-0199</a>
+                    </div>
+                    <div>
+                        <div class="text-sm text-slate-500">Email</div>
+                        <a href="mailto:info@proplumb.com" class="text-blue-600 hover:underline">info@proplumb.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="bg-[#0f172a] text-white/70 py-12" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <a href="#" class="text-2xl font-extrabold text-white flex items-center gap-2">
+                    <span class="text-blue-400">◆</span> Pro<span class="text-blue-400">Plumb</span>
+                </a>
+                <p class="text-sm mt-3">Premium plumbing, waterproofing, and tile services built on trust and quality.</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" aria-label="Facebook" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About</a></li>
+                    <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
+                    <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#services" class="hover:text-white transition">Plumbing</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Waterproofing</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Tile Installation</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Grouting</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Leakage Repair</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fas fa-phone mr-2 text-blue-400"></i> <a href="tel:+18005550199" class="hover:text-white transition">+1-800-555-0199</a></li>
+                    <li><i class="fas fa-envelope mr-2 text-blue-400"></i> <a href="mailto:info@proplumb.com" class="hover:text-white transition">info@proplumb.com</a></li>
+                    <li><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i> Austin, TX 78701</li>
+                    <li><i class="fas fa-clock mr-2 text-blue-400"></i> Mon–Sun: 7AM – 10PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10 mt-8 pt-6 text-sm text-center flex flex-col sm:flex-row justify-between gap-2">
+            <span>&copy; 2026 ProPlumb. All rights reserved.</span>
+            <span>Built with <i class="fas fa-heart text-red-400"></i> in Austin</span>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══ FLOATING BUTTONS ═══ -->
+<a href="https://wa.me/18005550199?text=Hi%20ProPlumb!%20I%20need%20a%20free%20quote." target="_blank" rel="noopener" class="float-btn float-btn-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp text-xl"></i> <span class="hidden sm:inline">WhatsApp</span>
+</a>
+<a href="tel:+18005550199" class="float-btn float-btn-call" aria-label="Call now">
+    <i class="fas fa-phone text-xl"></i> <span class="hidden sm:inline">Call Now</span>
+</a>
+<a href="#contact" class="float-btn float-btn-quote" aria-label="Get a free quote">
+    <i class="fas fa-file-signature text-xl"></i> <span class="hidden sm:inline">Free Quote</span>
+</a>
+
+<!-- ═══ BACK TO TOP ═══ -->
+<button id="back-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="close" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="Gallery preview" />
+</div>
+
+<!-- ═══ TOAST CONTAINER ═══ -->
+<div class="toast-container" id="toast-container"></div>
+
+
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        'use strict';
+
+        // ─── LOADING SCREEN ───
+        const loading = document.getElementById('loading-screen');
+        window.addEventListener('load', () => {
+            setTimeout(() => loading.classList.add('hidden'), 400);
+        });
+
+        // ─── NAVBAR SCROLL ───
+        const navbar = document.getElementById('navbar');
+        const stickyQuote = document.getElementById('sticky-quote');
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            navbar.classList.toggle('scrolled', y > 40);
+            stickyQuote.classList.toggle('show', y > 600);
+            document.getElementById('back-top').classList.toggle('visible', y > 500);
+        });
+
+        // ─── MOBILE MENU ───
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+        menuToggle.addEventListener('click', openMenu);
+        mobileClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+        // ─── SCROLL ANIMATIONS (Fade Up) ───
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        fadeEls.forEach(el => observer.observe(el));
+
+        // ─── COUNTER ANIMATION ───
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseFloat(el.dataset.target);
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function updateCounter(time) {
+                        const elapsed = time - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const current = progress * target;
+                        if (target % 1 === 0) {
+                            el.textContent = Math.round(current);
+                        } else {
+                            el.textContent = current.toFixed(1);
+                        }
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            el.textContent = target;
+                        }
+                    }
+                    requestAnimationFrame(updateCounter);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // ─── BACK TO TOP ───
+        document.getElementById('back-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ─── GALLERY DATA & RENDER ───
+        const galleryData = [
+            { id: 1, category: 'plumbing', title: 'Pipe Replacement', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop&crop=center&auto=format' },
+            { id: 2, category: 'waterproofing', title: 'Basement Waterproofing', img: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop&crop=center&auto=format' },
+            { id: 3, category: 'tiles', title: 'Bathroom Tile Install', img: 'https://images.unsplash.com/photo-1585704032916-c340fcaeeaf4?w=600&h=400&fit=crop&crop=center&auto=format' },
+            { id: 4, category: 'grouting', title: 'Tile Regrouting', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop&crop=center&auto=format' },
+            { id: 5, category: 'plumbing', title: 'Water Heater Install', img: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop&crop=center&auto=format' },
+            { id: 6, category: 'waterproofing', title: 'Roof Waterproofing', img: 'https://images.unsplash.com/photo-1585704032916-c340fcaeeaf4?w=600&h=400&fit=crop&crop=center&auto=format' },
+        ];
+
+        const galleryGrid = document.getElementById('gallery-grid');
+
+        function renderGallery(filter = 'all') {
+            const filtered = filter === 'all' ? galleryData : galleryData.filter(d => d.category === filter);
+            galleryGrid.innerHTML = filtered.map(item => `
+                    <div class="gallery-item shadow-card" data-category="${item.category}">
+                        <img src="${item.img}" alt="${item.title}" loading="lazy" />
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        <div class="p-3 bg-white text-sm font-medium flex justify-between">
+                            <span>${item.title}</span>
+                            <span class="text-blue-600">${item.category}</span>
+                        </div>
+                    </div>
+                `).join('');
+
+            document.querySelectorAll('.gallery-item').forEach(el => {
+                el.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    const lb = document.getElementById('lightbox');
+                    lb.querySelector('img').src = img.src;
+                    lb.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+        }
+        renderGallery();
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderGallery(this.dataset.filter);
+            });
+        });
+
+        // ─── LIGHTBOX ───
+        const lightbox = document.getElementById('lightbox');
+        lightbox.querySelector('.close').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ─── SEMANTIC TESTIMONIAL SLIDER ───
+        const testimonials = [{
+            name: 'Sarah Johnson',
+            avatar: 'SJ',
+            rating: 5,
+            text: 'ProPlumb saved our basement! The waterproofing team was professional, fast, and the results are flawless. Highly recommend!'
+        }, {
+            name: 'Michael Torres',
+            avatar: 'MT',
+            rating: 5,
+            text: 'Outstanding tile work! Our new bathroom looks like a spa. The crew was courteous and cleaned up perfectly. 10/10 service.'
+        }, {
+            name: 'Emily Chen',
+            avatar: 'EC',
+            rating: 5,
+            text: 'Emergency plumbing at 11 PM — they arrived in 30 minutes and fixed the burst pipe. Life savers!'
+        }, {
+            name: 'James Wilson',
+            avatar: 'JW',
+            rating: 4,
+            text: 'Great grouting job on our kitchen backsplash. Attention to detail was impressive. Will use them again.'
+        }, {
+            name: 'Lisa Park',
+            avatar: 'LP',
+            rating: 5,
+            text: 'From quote to completion, ProPlumb was professional and transparent. The waterproofing on our terrace is perfect.'
+        }, {
+            name: 'Robert Kim',
+            avatar: 'RK',
+            rating: 5,
+            text: 'Affordable, reliable, and high-quality tile installation. Our floors look brand new. Thanks to the whole ProPlumb team!'
+        }];
+
+        const track = document.getElementById('testimonialTrack');
+        const dotsContainer = document.getElementById('sliderDots');
+        let currentIndex = 0;
+        let totalSlides = testimonials.length;
+        let autoSlideInterval;
+
+        function renderTestimonials() {
+            track.innerHTML = testimonials.map((t, idx) => `
+                    <figure class="testimonial-slide" role="listitem" aria-label="Testimonial ${idx+1} of ${totalSlides}">
+                        <figcaption class="flex items-center gap-4">
+                            <span class="testimonial-avatar" aria-hidden="true">${t.avatar}</span>
+                            <div>
+                                <cite class="font-bold text-slate-800 not-italic">${t.name}</cite>
+                                <sl-rating value="${t.rating}" readonly></sl-rating>
+                            </div>
+                        </figcaption>
+                        <blockquote class="text-slate-600 text-sm mt-4 leading-relaxed">“${t.text}”</blockquote>
+                    </figure>
+                `).join('');
+
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', `Go to testimonial ${i+1}`);
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const slides = track.querySelectorAll('.testimonial-slide');
+            if (slides.length === 0) return;
+            const slideWidth = slides[0].offsetWidth + 24;
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            document.querySelectorAll('.slider-dots span').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+                dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = (index + totalSlides) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        function nextSlide() { goToSlide(currentIndex + 1); }
+        function prevSlide() { goToSlide(currentIndex - 1); }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        document.getElementById('nextSlide').addEventListener('click', nextSlide);
+        document.getElementById('prevSlide').addEventListener('click', prevSlide);
+
+        renderTestimonials();
+        setTimeout(updateSlider, 100);
+        resetAutoSlide();
+
+        const sliderWrapper = document.querySelector('.testimonial-slider-wrapper');
+        sliderWrapper.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        sliderWrapper.addEventListener('mouseleave', resetAutoSlide);
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(updateSlider, 200);
+        });
+
+        // ─── CONTACT FORM ───
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = this.querySelector('sl-input[name="name"]')?.value || '';
+            const phone = this.querySelector('sl-input[name="phone"]')?.value || '';
+            const email = this.querySelector('sl-input[name="email"]')?.value || '';
+            const service = this.querySelector('sl-select[name="service"]')?.value || '';
+            const city = this.querySelector('sl-input[name="city"]')?.value || '';
+            const message = this.querySelector('sl-textarea[name="message"]')?.value || '';
+
+            if (!name || !phone || !email || !service) {
+                showToast('Please fill in all required fields.', 'error');
+                return;
+            }
+            if (!email.includes('@') || !email.includes('.')) {
+                showToast('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            const btn = this.querySelector('sl-button[type="submit"]');
+            btn.loading = true;
+            btn.disabled = true;
+            await new Promise(resolve => setTimeout(resolve, 1200));
+            btn.loading = false;
+            btn.disabled = false;
+
+            showToast('Thank you! We\'ll get back to you within 2 hours.', 'success');
+            this.reset();
+            this.querySelectorAll('sl-input, sl-select, sl-textarea').forEach(el => {
+                if (el.reset) el.reset();
+                if (el.value !== undefined) el.value = '';
+            });
+            const select = this.querySelector('sl-select');
+            if (select) select.value = '';
+        });
+
+        // ─── TOAST SYSTEM ───
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `
+                    <span>${type === 'success' ? '✅' : '❌'}</span>
+                    <span>${message}</span>
+                `;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(40px)';
+                toast.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                setTimeout(() => toast.remove(), 400);
+            }, 3500);
+        }
+
+        // ─── SMOOTH SCROLL FOR ANCHORS ───
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        console.log('🚀 ProPlumb — Premium Plumbing & Waterproofing Services');
+    });
+</script>
+
+</body>
+</html>
