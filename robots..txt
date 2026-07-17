@@ -1,0 +1,14 @@
+User-agent: *
+
+# Allow all pages
+Allow: /
+
+# Block internal/system folders if they exist
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://pradeepengineer.com/sitemap.xml
